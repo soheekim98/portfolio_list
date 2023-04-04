@@ -285,12 +285,11 @@ img, svg {
   font-family: "SCoreDream";
 }
 .portfolio .portfolio-contents .contents-box .contents-txt-box .contents-txt {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 .portfolio .portfolio-contents .contents-box .contents-txt-box .contents-txt h1 {
   font-size: 1.5rem;
   font-weight: 400;
-  margin-bottom: 12px;
   text-transform: uppercase;
 }
 .portfolio .portfolio-contents .contents-box .contents-txt-box .contents-txt p {
@@ -301,8 +300,12 @@ img, svg {
 .portfolio .portfolio-contents .contents-box .contents-txt-box .contents-txt p:last-child {
   margin: 0;
 }
+.portfolio .portfolio-contents .contents-box .contents-txt-box .explain {
+  margin: 0;
+}
 .portfolio .portfolio-contents .contents-box .contents-txt-box .explain p {
   font-weight: 300;
+  margin-bottom: 0;
 }
 .portfolio .portfolio-contents .go-site-btn-wrap {
   width: 100%;
