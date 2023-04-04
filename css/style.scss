@@ -1,0 +1,503 @@
+@import "./reset";
+@mixin centerflex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+@mixin centerposition{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+}
+@mixin spacebetween{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+#wrapper{
+      position: relative;
+}
+
+.header-wrap{
+      width: 100%;
+      height: 80px;
+      padding: 0 72px;
+      text-transform: uppercase;
+      color: $main-color;
+      position: absolute;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      &.hd-dark{
+            color: $light-color;
+      }
+
+      .logo-wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+      }
+      .logo{
+            font-family: $main-font;
+            font-size: 1.625rem;
+      }
+      .nav-wrap{
+            @include centerflex();
+            cursor: pointer;
+
+            li{
+            font-family: $sub-font;
+            font-size: $second-fontsize;
+            margin-right: 140px;
+            
+            &:last-child{
+                        margin-right: 0;
+            }
+            &:hover{
+                  color: $sub-color;
+            }
+            }
+      }
+}
+
+.section-portfolio{
+      width: 100%;
+      height: 100vh;
+      @include centerflex();
+}
+
+.portfolio-txt-wrap{
+      font-family: $main-font;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 100px;
+      @include centerflex();
+
+
+      &:hover .left-txt-wrap{
+            transform: skewX(20deg);
+      }
+      &:hover .right-txt-wrap{
+            transform: skewX(-20deg);
+      }
+
+      .left-txt-wrap,
+      .right-txt-wrap{
+            color: $sub-color;
+            font-size: 7rem;
+            letter-spacing: 40px;
+            transition: 0.3s;
+      }
+
+
+      .center-txt{
+            font-size: 3rem;
+            margin: 0 120px;
+            color: $main-color;
+            
+            &.center-dark{
+                  color: $light-color;
+
+                  & li:hover{
+                        color: $dark-bg-color;
+                        text-shadow: -2px 0px $light-color, 0px 2px $light-color, 2px 0px $light-color, 0px -2px $light-color;
+                        animation: hover-txt .6s infinite linear;
+                  }
+            }
+
+            li{
+                  margin-bottom: 60px;
+      
+                  &:hover{
+                        color: $light-color;
+                        text-shadow: -2px 0px $main-color, 0px 2px $main-color, 2px 0px $main-color, 0px -2px $main-color;
+                        animation: hover-txt .6s infinite linear;
+                  }
+                  @keyframes hover-txt{
+                        0%{
+                              transform: rotate(-10deg) scale(1.2);
+                        }
+                        50%{
+                              transform: rotate(10deg) scale(1.2);
+                        }
+                        100%{
+                              transform: rotate(-10deg) scale(1.2);
+                        }
+                  }
+            }
+      }
+}
+
+.portfolio-bg{
+      z-index: -1;
+      opacity: 0;
+
+      @include centerposition();
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #222, $alpha: .6) ;
+
+      .portfolio-wrap{
+            @include centerflex();
+      }
+
+      &.on{
+            opacity: 1;
+            z-index: 9999;
+    }
+}
+
+.portfolio{
+      @include centerposition();
+      width: 1600px;
+      height: 727px;
+      padding: 52px;
+
+      background-color: $light-color;
+      border: $btn;
+      border-radius: 60px;
+
+      color: $main-color;
+
+      &.portfolio-dark{
+            background-color: $dark-bg-color;
+            border: 2px solid $light-color;
+            color: $light-color;
+      }
+
+      .portfolio-header{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .header-txt{
+                  width: 100%;
+                  text-transform: uppercase;
+                  margin-bottom: 20px;
+      
+                  .sub-head-txt{
+                        font-family: $sub-font;
+                        font-size: $second-fontsize;
+                        font-weight: 500;
+                  }
+                  .title-head-txt{
+                        font-family: $main-font;
+                        font-size: 3.75rem;
+                  }
+            }
+            .portfolio-close-btn{
+                  cursor: pointer;
+                  &::after{
+                        content: '\00d7';
+                        color: $sub-color;
+                        font-size: 4.5rem;
+                        font-weight: 200;                        
+                  }
+            }
+      }
+
+      .portfolio-contents{
+            // width: 100%;
+            // height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .page-img{
+                  width: 872px;
+                  height: 493px;
+                  margin-right: 52px;
+            }
+            .design-page-img{
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+
+                  .design-contents{
+                        position: relative;
+
+                        img{
+                              width: 718px;
+                              height: 493px;
+
+                              &:first-child{
+                                    margin-right: 20px;
+                              }
+                        }
+
+                        &:hover .hover-contents{
+                              opacity: 1;
+                              z-index: 99;
+                        }
+
+                        .hover-contents{
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              width: 718px;
+                              height: 493px;
+                              border-radius: 20px;
+                              background-color: rgba(0,0,0,0.6);
+                              @include centerflex();
+
+                              transition: .3s;
+                              opacity: 0;
+                              z-index: -1;
+
+                              .hover-txt{
+                                    text-align: center;
+                                    color: $light-color;
+                                    h1{
+                                          font-size: 2rem;
+                                          margin-bottom: 28px;
+                                          font-weight: 600;
+                                    }
+                                    a{
+                                          font-size: 1.25rem;
+                                          font-weight: 500;
+                                          transition: .3s;
+                                          &:hover{
+                                                border-bottom: 2px solid $light-color;
+                                          }
+                                    }
+                              }
+                        }
+                  }
+            }
+
+            .contents-box{
+                  width: 38%;
+                  height: 493px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                  flex-direction: column;
+                  .contents-txt-box{
+                        font-family: $kr-font;
+                        .contents-txt{
+                              margin-bottom: 20px;
+                              h1{
+                                    font-size: 1.5rem;
+                                    font-weight: 400;
+                                    margin-bottom: 12px;
+                                    text-transform: uppercase;
+                              }
+                              p{
+                                    font-size: $second-fontsize;
+                                    font-weight: 200;
+                                    margin-bottom: 4px;
+
+                                    &:last-child{
+                                          margin: 0;
+                                    }
+                              }
+                        }
+                        .explain{
+                              p{
+                                    font-weight: 300;
+
+                              }
+                        }
+                  }
+            }
+
+            .go-site-btn-wrap{
+                  width: 100%;
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: center;
+
+                  .btn-rigth{
+                        display: flex;
+                  }
+
+                  .site-btn{
+                        width: 80px;
+                        height: 80px;
+                        padding: 12px;
+                        margin-right: 12px;
+                        border: $btn;
+                        border-radius: 20px;
+
+                        font-size: $normal-fontsize;
+                        font-family: $main-font;
+                        text-align: center;
+                        text-transform: uppercase;
+
+                        transition: 0.3s;
+                        a{
+                              height: 100%;
+                              @include centerflex();
+                        }
+
+                        &.btn-dark{
+                              border: 2px solid $light-color;
+
+                              &:hover{
+                                    background-color: $light-color;
+                                    color: $dark-bg-color;
+                              }
+                        }
+
+                        &:hover{
+                              background-color: $main-color;
+                              color: $light-color;
+                        }
+                  }
+                  .QR-img{
+                        width: 80px;
+                        height: 80px;
+                  }
+            }
+      }
+      
+}
+
+.contact-pop-up-bg{
+      position: absolute;
+      @include centerposition();
+      z-index: -1;
+      opacity: 0;
+      @include centerflex();
+      transition: 0.3s;
+  
+      
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #222, $alpha: .6) ;
+  
+      &.on{
+              opacity: 1;
+              z-index: 9999;
+      }
+      
+      .contact-pop-up{
+              background-color: $light-color;
+              color: $main-color;
+              border: 2px solid $main-color;
+              border-radius: 60px;
+              padding: 120px;
+              padding-bottom: 60px;
+      
+              @include centerflex();
+              flex-direction: column;
+              text-align: center;
+              
+              &.contact-dark{
+                  background-color: $dark-bg-color;
+                  color: $light-color;
+                  border: 2px solid $light-color;
+              }
+
+              .title-txt{
+                  // width: 100%;
+                  // height: 100%;
+                  text-transform: uppercase;
+                  font-family: $main-font;
+                  margin-bottom: 60px;
+                  h1{
+                          color: $sub-color;
+                          font-size: 5rem;
+                          animation: text 1.5s infinite cubic-bezier(0.4, 0, 1, 1);
+                  }
+                  @keyframes text{
+                          20% { transform: scaleY(1.4) skew(10deg)  }
+                          50% { transform: scaleY(1)   skew(0)      }
+                          70% { transform: scaleY(1.4) skew(-10deg) }
+                  }
+                  p{
+                          font-size: 1.50rem;
+                  }
+              }
+              .sub-txt{
+                  h2{
+                          font-family: $main-font;
+                          text-transform: uppercase;
+                          font-size: 1.25rem;
+                          margin-bottom: 12px;
+                  }
+                  a,p{
+                          font-size: 2rem;
+                          font-family: $sub-font;
+                          margin-bottom: 40px;
+                          display: block;
+  
+                          &::after{
+                              display:block;
+                              content: '';
+                              border-bottom: solid 3px $sub-color;  
+                              transform: scaleX(0);  
+                              transition: transform 250ms ease-in-out;
+                          }
+                          &:hover::after{
+                              transform: scaleX(.8);
+                          }
+                  }
+                  // p{
+                  //       font-size: 2rem;
+                  //       font-family: $sub-font;
+                  //       margin-bottom: 40px;
+                  // }
+              }
+              .close-btn{
+                  width: 100%;
+                  height: 100%;
+  
+                  &::after{
+                          cursor: pointer;
+                          content: "\00d7";
+                          font-size: 72px;
+                          font-weight: 200;
+                          color: $sub-color;
+                  }
+              }
+      }
+}
+
+.color-mode-btn{
+      .dark-mode-btn{
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            
+            padding: 12px;
+            border: 2px solid $main-color;
+            border-radius: 50%;
+            @include centerflex();
+
+            &.off{
+                  display: none;
+            }
+      }
+
+      .light-mode-btn{
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+
+            padding: 12px;
+            border: 2px solid $light-color;
+            border-radius: 50%;
+            @include centerflex();
+            opacity: 0;
+            z-index: -1;
+
+            &.on{
+                  opacity: 1;
+                  z-index: 9;
+            }
+      }
+}
+

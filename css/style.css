@@ -1,0 +1,483 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap");
+@import url("https://webfontworld.github.io/score/SCoreDream.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F3EFE0;
+  transition: 0.3s;
+}
+body.dark {
+  background-color: #434242;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper {
+  position: relative;
+}
+
+.header-wrap {
+  width: 100%;
+  height: 80px;
+  padding: 0 72px;
+  text-transform: uppercase;
+  color: #525E75;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-wrap.hd-dark {
+  color: #F3EFE0;
+}
+.header-wrap .logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-wrap .logo {
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 1.625rem;
+}
+.header-wrap .nav-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.header-wrap .nav-wrap li {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 1.25rem;
+  margin-right: 140px;
+}
+.header-wrap .nav-wrap li:last-child {
+  margin-right: 0;
+}
+.header-wrap .nav-wrap li:hover {
+  color: #BB6464;
+}
+
+.section-portfolio {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-txt-wrap {
+  font-family: "Black Han Sans", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio-txt-wrap:hover .left-txt-wrap {
+  transform: skewX(20deg);
+}
+.portfolio-txt-wrap:hover .right-txt-wrap {
+  transform: skewX(-20deg);
+}
+.portfolio-txt-wrap .left-txt-wrap,
+.portfolio-txt-wrap .right-txt-wrap {
+  color: #BB6464;
+  font-size: 7rem;
+  letter-spacing: 40px;
+  transition: 0.3s;
+}
+.portfolio-txt-wrap .center-txt {
+  font-size: 3rem;
+  margin: 0 120px;
+  color: #525E75;
+}
+.portfolio-txt-wrap .center-txt.center-dark {
+  color: #F3EFE0;
+}
+.portfolio-txt-wrap .center-txt.center-dark li:hover {
+  color: #434242;
+  text-shadow: -2px 0px #F3EFE0, 0px 2px #F3EFE0, 2px 0px #F3EFE0, 0px -2px #F3EFE0;
+  animation: hover-txt 0.6s infinite linear;
+}
+.portfolio-txt-wrap .center-txt li {
+  margin-bottom: 60px;
+}
+.portfolio-txt-wrap .center-txt li:hover {
+  color: #F3EFE0;
+  text-shadow: -2px 0px #525E75, 0px 2px #525E75, 2px 0px #525E75, 0px -2px #525E75;
+  animation: hover-txt 0.6s infinite linear;
+}
+@keyframes hover-txt {
+  0% {
+    transform: rotate(-10deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(-10deg) scale(1.2);
+  }
+}
+
+.portfolio-bg {
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 0.6);
+}
+.portfolio-bg .portfolio-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio-bg.on {
+  opacity: 1;
+  z-index: 9999;
+}
+
+.portfolio {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1600px;
+  height: 727px;
+  padding: 52px;
+  background-color: #F3EFE0;
+  border: 2px solid #525E75;
+  border-radius: 60px;
+  color: #525E75;
+}
+.portfolio.portfolio-dark {
+  background-color: #434242;
+  border: 2px solid #F3EFE0;
+  color: #F3EFE0;
+}
+.portfolio .portfolio-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.portfolio .portfolio-header .header-txt {
+  width: 100%;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.portfolio .portfolio-header .header-txt .sub-head-txt {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.portfolio .portfolio-header .header-txt .title-head-txt {
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 3.75rem;
+}
+.portfolio .portfolio-header .portfolio-close-btn {
+  cursor: pointer;
+}
+.portfolio .portfolio-header .portfolio-close-btn::after {
+  content: "×";
+  color: #BB6464;
+  font-size: 4.5rem;
+  font-weight: 200;
+}
+.portfolio .portfolio-contents {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.portfolio .portfolio-contents .page-img {
+  width: 872px;
+  height: 493px;
+  margin-right: 52px;
+}
+.portfolio .portfolio-contents .design-page-img {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.portfolio .portfolio-contents .design-page-img .design-contents {
+  position: relative;
+}
+.portfolio .portfolio-contents .design-page-img .design-contents img {
+  width: 718px;
+  height: 493px;
+}
+.portfolio .portfolio-contents .design-page-img .design-contents img:first-child {
+  margin-right: 20px;
+}
+.portfolio .portfolio-contents .design-page-img .design-contents:hover .hover-contents {
+  opacity: 1;
+  z-index: 99;
+}
+.portfolio .portfolio-contents .design-page-img .design-contents .hover-contents {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 718px;
+  height: 493px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  opacity: 0;
+  z-index: -1;
+}
+.portfolio .portfolio-contents .design-page-img .design-contents .hover-contents .hover-txt {
+  text-align: center;
+  color: #F3EFE0;
+}
+.portfolio .portfolio-contents .design-page-img .design-contents .hover-contents .hover-txt h1 {
+  font-size: 2rem;
+  margin-bottom: 28px;
+  font-weight: 600;
+}
+.portfolio .portfolio-contents .design-page-img .design-contents .hover-contents .hover-txt a {
+  font-size: 1.25rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.portfolio .portfolio-contents .design-page-img .design-contents .hover-contents .hover-txt a:hover {
+  border-bottom: 2px solid #F3EFE0;
+}
+.portfolio .portfolio-contents .contents-box {
+  width: 38%;
+  height: 493px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.portfolio .portfolio-contents .contents-box .contents-txt-box {
+  font-family: "SCoreDream";
+}
+.portfolio .portfolio-contents .contents-box .contents-txt-box .contents-txt {
+  margin-bottom: 20px;
+}
+.portfolio .portfolio-contents .contents-box .contents-txt-box .contents-txt h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.portfolio .portfolio-contents .contents-box .contents-txt-box .contents-txt p {
+  font-size: 1.25rem;
+  font-weight: 200;
+  margin-bottom: 4px;
+}
+.portfolio .portfolio-contents .contents-box .contents-txt-box .contents-txt p:last-child {
+  margin: 0;
+}
+.portfolio .portfolio-contents .contents-box .contents-txt-box .explain p {
+  font-weight: 300;
+}
+.portfolio .portfolio-contents .go-site-btn-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.portfolio .portfolio-contents .go-site-btn-wrap .btn-rigth {
+  display: flex;
+}
+.portfolio .portfolio-contents .go-site-btn-wrap .site-btn {
+  width: 80px;
+  height: 80px;
+  padding: 12px;
+  margin-right: 12px;
+  border: 2px solid #525E75;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-family: "Black Han Sans", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.portfolio .portfolio-contents .go-site-btn-wrap .site-btn a {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio .portfolio-contents .go-site-btn-wrap .site-btn.btn-dark {
+  border: 2px solid #F3EFE0;
+}
+.portfolio .portfolio-contents .go-site-btn-wrap .site-btn.btn-dark:hover {
+  background-color: #F3EFE0;
+  color: #434242;
+}
+.portfolio .portfolio-contents .go-site-btn-wrap .site-btn:hover {
+  background-color: #525E75;
+  color: #F3EFE0;
+}
+.portfolio .portfolio-contents .go-site-btn-wrap .QR-img {
+  width: 80px;
+  height: 80px;
+}
+
+.contact-pop-up-bg {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 0.6);
+}
+.contact-pop-up-bg.on {
+  opacity: 1;
+  z-index: 9999;
+}
+.contact-pop-up-bg .contact-pop-up {
+  background-color: #F3EFE0;
+  color: #525E75;
+  border: 2px solid #525E75;
+  border-radius: 60px;
+  padding: 120px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.contact-pop-up-bg .contact-pop-up.contact-dark {
+  background-color: #434242;
+  color: #F3EFE0;
+  border: 2px solid #F3EFE0;
+}
+.contact-pop-up-bg .contact-pop-up .title-txt {
+  text-transform: uppercase;
+  font-family: "Black Han Sans", sans-serif;
+  margin-bottom: 60px;
+}
+.contact-pop-up-bg .contact-pop-up .title-txt h1 {
+  color: #BB6464;
+  font-size: 5rem;
+  animation: text 1.5s infinite cubic-bezier(0.4, 0, 1, 1);
+}
+@keyframes text {
+  20% {
+    transform: scaleY(1.4) skew(10deg);
+  }
+  50% {
+    transform: scaleY(1) skew(0);
+  }
+  70% {
+    transform: scaleY(1.4) skew(-10deg);
+  }
+}
+.contact-pop-up-bg .contact-pop-up .title-txt p {
+  font-size: 1.5rem;
+}
+.contact-pop-up-bg .contact-pop-up .sub-txt h2 {
+  font-family: "Black Han Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+.contact-pop-up-bg .contact-pop-up .sub-txt a, .contact-pop-up-bg .contact-pop-up .sub-txt p {
+  font-size: 2rem;
+  font-family: "Bai Jamjuree", sans-serif;
+  margin-bottom: 40px;
+  display: block;
+}
+.contact-pop-up-bg .contact-pop-up .sub-txt a::after, .contact-pop-up-bg .contact-pop-up .sub-txt p::after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px #BB6464;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.contact-pop-up-bg .contact-pop-up .sub-txt a:hover::after, .contact-pop-up-bg .contact-pop-up .sub-txt p:hover::after {
+  transform: scaleX(0.8);
+}
+.contact-pop-up-bg .contact-pop-up .close-btn {
+  width: 100%;
+  height: 100%;
+}
+.contact-pop-up-bg .contact-pop-up .close-btn::after {
+  cursor: pointer;
+  content: "×";
+  font-size: 72px;
+  font-weight: 200;
+  color: #BB6464;
+}
+
+.color-mode-btn .dark-mode-btn {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  padding: 12px;
+  border: 2px solid #525E75;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.color-mode-btn .dark-mode-btn.off {
+  display: none;
+}
+.color-mode-btn .light-mode-btn {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  padding: 12px;
+  border: 2px solid #F3EFE0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: -1;
+}
+.color-mode-btn .light-mode-btn.on {
+  opacity: 1;
+  z-index: 9;
+}/*# sourceMappingURL=style.css.map */
